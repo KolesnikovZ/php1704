@@ -15,4 +15,4 @@ function primeNumber($n){
         echo $n;
     }
 }
-echo primeNumber(19);
+echo primeNumber(23);

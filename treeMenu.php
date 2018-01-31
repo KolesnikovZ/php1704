@@ -32,3 +32,9 @@ function Menu($items, $parents, $parent = 1){
 }
 echo Menu($items, $parents, 1);
 
+
+$items = array_filter($items, function($product) use ($period)
+    {
+    return time() - strtotime($product['added']) <= $period;
+});
+
