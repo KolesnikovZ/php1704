@@ -24,17 +24,29 @@ $items = [
     2 => ['parent' => 1, 'title' => 'first'],
     3 => ['parent' => 1, 'title' => 'second']
 ];
+
+function sorting($items){
+    return $parents = function ($paretn, $title) use (&$items) {
+        return strnatcmp($paretn, $title);
+    };
+}
+
+usort($items, $parents);
+foreach ($items as $key => &$item) {
+    echo $item['$parent'] . '- ' .$item['$title'] ."\n";
+}
+/*
 $parents = [];
 foreach ($items AS $id => &$item) {
     $parents[$item['parent']][] = $id;
 }
-
 function sorting($parents){
     return function ($a, $b) use ($key){
         return strnatcmp($a[$key], $b[$key]);
     };
 }
 usort($items, sorting($key));
-foreach ($items as $item => &$key) {
+foreach ($items as $key => &$item) {
     echo $item['$parent'] . '- ' .$item['$title'] ."\n";
 }
+*/
