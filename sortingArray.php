@@ -48,7 +48,6 @@ foreach ($items as $key => &$item) {
     echo $item['parent'] . '- ' .$item['title'] ."\n";
 }
 
-*/
 $items = [
     4 => ['parent' => 3, 'title' => 'third'],
     2 => ['parent' => 1, 'title' => 'first'],
@@ -60,6 +59,19 @@ function sorting(&$items){
     };
 }
 usort($items, sorting($items));
+foreach ($items as $key => &$item) {
+    echo $item['parent'] . '- ' .$item['title'] ."\n";
+}
+ */
+$items = [
+    4 => ['parent' => 3, 'title' => 'third'],
+    2 => ['parent' => 1, 'title' => 'first'],
+    3 => ['parent' => 1, 'title' => 'second']
+];
+$sorting = function () use (&$items){
+    return ($items);
+};
+usort($items, $sorting);
 foreach ($items as $key => &$item) {
     echo $item['parent'] . '- ' .$item['title'] ."\n";
 }
