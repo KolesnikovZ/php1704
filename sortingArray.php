@@ -32,7 +32,7 @@ usort($items, sorting($key));
 foreach ($items as $key => &$item) {
     echo $item['$parent'] . '- ' .$item['$title'] ."\n";
 }
-*/
+
 $items = [
     4 => ['parent' => 3, 'title' => 'third'],
     2 => ['parent' => 1, 'title' => 'first'],
@@ -45,10 +45,10 @@ function sorting($items){
 }
 usort($items, sorting('item'));
 foreach ($items as $key => &$item) {
-    echo $item['$parent'] . '- ' .$item['$title'] ."\n";
+    echo $item['parent'] . '- ' .$item['title'] ."\n";
 }
 
-
+*/
 $items = [
     4 => ['parent' => 3, 'title' => 'third'],
     2 => ['parent' => 1, 'title' => 'first'],
@@ -61,5 +61,5 @@ function sorting(&$items){
 }
 usort($items, sorting($items));
 foreach ($items as $key => &$item) {
-    echo $item['$parent'] . '- ' .$item['$title'] ."\n";
+    echo $item['parent'] . '- ' .$item['title'] ."\n";
 }
